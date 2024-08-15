@@ -29,6 +29,8 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:data"))
     implementation(project(":feature:main"))
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.navigation.fragment)
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.koin.core)

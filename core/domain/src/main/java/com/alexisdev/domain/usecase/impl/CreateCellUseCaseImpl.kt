@@ -12,7 +12,7 @@ import kotlin.random.Random
 
 internal class CreateCellUseCaseImpl(private val cellRepository: CellRepository) :
     CreateCellUseCase {
-    override fun execute() {
+    override suspend fun execute() {
         cellRepository.createCell(
             Cell(
                 id = Random.nextLong(),

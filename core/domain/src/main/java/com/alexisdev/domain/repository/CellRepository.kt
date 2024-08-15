@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface CellRepository {
     fun getAllCells(): Flow<List<Cell>>
-    fun createCell(newCell: Cell)
-    fun updateCells(updatedCells: List<Cell>)
+    suspend fun createCell(newCell: Cell)
+    suspend fun updateCells(updatedCells: List<Cell>)
 }

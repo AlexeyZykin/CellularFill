@@ -6,21 +6,25 @@ import com.alexisdev.data.model.toCellDto
 import com.alexisdev.domain.model.Cell
 import com.alexisdev.domain.repository.CellRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.map
 
 internal class CellRepositoryImpl : CellRepository {
     private val cells = mutableListOf<CellDto>()
+    private val updatedCellsFlow = MutableSharedFlow<List<CellDto>>()
 
     override fun getAllCells(): Flow<List<Cell>> {
-        return flowOf(cells.map { it.toCell() })
+        return updatedCellsFlow.map { it.map { it.toCell() } }
     }
 
-    override fun createCell(newCell: Cell) {
+    override suspend fun createCell(newCell: Cell) {
         cells.add(newCell.toCellDto())
+        updatedCellsFlow.emit(cells)
     }
 
-    override fun updateCells(updatedCells: List<Cell>) {
+    override suspend fun updateCells(updatedCells: List<Cell>) {
         cells.clear()
         cells.addAll(updatedCells.map { it.toCellDto() })
+        updatedCellsFlow.emit(cells)
     }
 }

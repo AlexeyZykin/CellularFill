@@ -1,0 +1,12 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alive_cell_status_title">Живая</string>
+    <string name="alive_cell_status_desc">и шевелится!</string>
+    <string name="dead_cell_status_title">Мертвая</string>
+    <string name="dead_cell_status_desc">или прикидывается</string>
+    <string name="new_life_cell_status_title">Жизнь</string>
+    <string name="new_life_cell_status_desc">Ку-ку!</string>
+    <string name="cells_fragment_title">Клеточное наполнение</string>
+    <string name="cells_fragment_button">сотворить</string>
+</resources>
