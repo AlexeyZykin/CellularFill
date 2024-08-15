@@ -1,5 +1,6 @@
 ## App preview
-![](recording/app_recording.mp4)
+
+https://github.com/user-attachments/assets/9b29f4a2-c045-490b-b05d-95cafe808696
 _____________
 ## Клеточное наполнение
 
